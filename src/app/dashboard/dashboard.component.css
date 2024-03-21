@@ -1,0 +1,63 @@
+@keyframes blink {
+    0% { background-color: red; }
+    25% { background-color: blue; }
+    50% { background-color: green; }
+    75% { background-color: yellow; }
+    100% { background-color: red; }
+  }
+  
+  .blink_it {
+    animation: blinker 1s linear infinite;
+  }
+
+  
+
+  .blink_me {
+    animation: blink 1s linear infinite;
+  }
+  
+  @keyframes blinker {  
+    0% { background-color: rgb(0, 0, 0); }
+    50% { background-color: rgb(255, 255, 255); }
+    100% { background-color: rgb(3, 3, 3); }
+  }
+  .mochiy {
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+  .rhombus {
+    width: 150px;
+    height: 150px;
+    background-color: #3498db;
+    transform: rotate(45deg);
+    border-radius: 5px;
+  }
+
+  .reward{
+   
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+  .invite{
+    margin-left: 750px;
+    width: 150px;
+    height: 150px;
+    background-color: #3498db;
+    transform: rotate(45deg);
+    border-radius: 5px;
+  }
+  .referral{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+
+  .text{
+    padding-top: 50px;
+    transform: rotate(675deg);
+    margin-left: -30px;
+  }
+
+  

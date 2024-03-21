@@ -1,0 +1,92 @@
+<!-- <div class="container mt-5">
+    <div class="card" style="animation: blink 2s linear infinite;">
+      <div class="card-header bg-primary text-white">
+        Featured
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{totalReferrals}}{{totalRewards}}</h5>
+        <p class="card-text">This card blinks in different colors.</p>
+      </div>
+      <div>
+        <button (click)="getTotalReferrals()">total referrals</button>
+        <button (click)="getRewardPoints()">Rewards</button>
+      </div>
+    </div>
+  </div> -->
+
+<!-- Modal -->
+<div class="modal fade" id="rewardpoints" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mochiy" id="exampleModalLabel">Rewards Points Earned</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mochiy text-center">
+        {{totalRewards}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="invite" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mochiy" id="exampleModalLabel">Referral Code</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mochiy text-center">
+        <input type="text" style="border: none;" [ngModel]="referralCode" readonly #referraldata>
+        <button mat-icon-button (click)="copyReferralCode(referraldata)">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body mochiy text-center">
+        <input type="text" style="border: none;" [ngModel]="inviteUrl" readonly #referralurl>
+        <button mat-icon-button (click)="copyReferralCode(referralurl)">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="totalreferral" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mochiy" id="exampleModalLabel">Total Referrals</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mochiy text-center">
+        {{totalReferrals}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div  style="background-color: aqua;height: 520px;">
+<div class="row">
+  <div  data-toggle="modal" data-target="#rewardpoints" class="col" style="margin-left: 200px;margin-top: 50px;"><div class="rhombus reward" (click)="getRewardPoints()"> <div class="text mochiy"> <span>Rewards Points</span></div></div></div>
+  <div class="col text-white text-center mochiy" style="font-size: 20px; margin-top: 50px;padding: 30px;border-radius: 30px;" class="mochiy">Welcome to Referral ripple <br> Invite friends and earn rewards </div>
+  <div  data-toggle="modal" data-target="#totalreferral" class="col " style="margin-left: 120px;margin-top: 50px;"><div class="rhombus referral" (click)="getTotalReferrals()"> <div class="text mochiy"> <span>Total Referrals</span></div></div></div>
+</div>
+<div class="row" style="margin-top: 100px; margin-left:570px;"><div  data-toggle="modal" data-target="#invite" class="col"><div class="rhombus blink_me"> <div class="text mochiy"> <span class="text-white">Invite Friends</span></div></div></div></div>
+</div>
+
+

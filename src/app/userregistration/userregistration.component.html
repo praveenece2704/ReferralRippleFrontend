@@ -1,0 +1,57 @@
+<!-- registration.component.html -->
+<div class="container-fluid" style="margin-top: -10px;">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+     
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="needs-validation registration-form mochiy" novalidate>
+        <div  class="text-center" style="color: darkgoldenrod;">Registration form</div><br>
+        <div>
+    <label for="userName">User Name:</label><br>
+    <input type="text" id="userName" formControlName="userName" />
+    <div *ngIf="registrationForm.get('userName')?.invalid && registrationForm.get('userName')?.touched">
+      <div *ngIf="registrationForm.get('userName')?.hasError('required')" class="errordisplay">User Name is required.</div>
+    </div>
+  </div>
+    <div>
+      <label for="fullName">Full Name:</label><br>
+      <input type="text" id="fullName" formControlName="fullName" />
+      <div *ngIf="registrationForm.get('fullName')?.invalid && registrationForm.get('fullName')?.touched">
+        <div *ngIf="registrationForm.get('fullName')?.hasError('required')" class="errordisplay">Full Name is required.</div>
+      </div>
+    </div>
+    <div>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" formControlName="email" />
+      <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+        <div *ngIf="registrationForm.get('email')?.hasError('required')" class="errordisplay">Email is required.</div>
+        <div *ngIf="registrationForm.get('email')?.hasError('email')" class="errordisplay">Invalid email format.</div>
+      </div>
+    </div>
+    <div>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" formControlName="password" />
+      <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+        <div *ngIf="registrationForm.get('password')?.hasError('required')" class="errordisplay">Password is required.</div>
+        <div *ngIf="registrationForm.get('password')?.hasError('minlength')" class="errordisplay">Password must be at least 6 characters long.</div>
+      </div>
+    </div>
+    <div>
+      <label for="confirmPassword" >Confirm Password:</label><br>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" />
+      <div *ngIf="registrationForm.get('confirmPassword')?.invalid && registrationForm.get('confirmPassword')?.touched">
+        <div *ngIf="registrationForm.get('confirmPassword')?.hasError('required')" class="errordisplay">Confirm Password is required.</div>
+        <div *ngIf="registrationForm?.hasError('passwordMismatch')" class="errordisplay">Passwords do not match.</div>
+      </div>
+    </div>
+    <div>
+      <label for="referredBy">Referrer Code:</label><br>
+      <input type="text" id="referredBy" formControlName="referredBy" [ngModel]="inviteCode"/>
+    </div>
+    <br>
+    <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-secondary">Register</button>
+    &nbsp;&nbsp;<span><a routerLink="/login">Back to Login</a></span>
+  </form>
+</div>
+</div>
+</div>
+  

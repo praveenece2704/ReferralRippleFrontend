@@ -1,0 +1,29 @@
+<!-- login.component.html -->
+<div class="container-fluid" style="margin-top: -70px;">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="needs-validation login-form mochiy" novalidate>
+        <div  class="text-center" style="color: darkgoldenrod;">Login form</div><br>   
+        <div>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" formControlName="email" />
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        <div *ngIf="loginForm.get('email')?.hasError('required')" class="errordisplay">Email is required.</div>
+        <div *ngIf="loginForm.get('email')?.hasError('email')" class="errordisplay">Invalid email format.</div>
+      </div>
+    </div>
+    <div>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" formControlName="password" />
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <div *ngIf="loginForm.get('password')?.hasError('required')" class="errordisplay">Password is required.</div>
+        <div *ngIf="loginForm.get('password')?.hasError('minlength')" class="errordisplay"> Password must be at least 6 characters long.</div>
+      </div>
+    </div><br>
+    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-secondary">Login</button>
+    <br><span>New User </span><a routerLink="/register">click here for register</a>
+  </form>
+</div>
+</div>
+</div>
+  
